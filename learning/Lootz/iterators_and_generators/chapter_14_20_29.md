@@ -43,3 +43,6 @@ for loop works on any iterable object.
 ### Interestingly, the iteration protocol is even more pervasive in Python today than the examples so far have demonstrated—essentially everything in Python’s built-in toolset that scans an object from left to right is defined to use the iteration protocol on the subject object
 
 ### `map`, `filter` and `zip` are exhausted after iteration of elements and multiple assignments are impossible, but this can be done with `range`.
+
+### Generator objects can't be indexed and we can't access length.
+### (i for i in range(100)) is a generator, not a tuple.

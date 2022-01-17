@@ -1,4 +1,5 @@
 """
+
 f = open("script.py")
 # Reads file line ny line like __next__ method
 print(f.readline())
@@ -19,9 +20,6 @@ for line in open('script.py'):       # Use file iterators to read by lines
     print(line.upper(), end='')       # Calls __next__, catches StopIteration
 
 # Iteration protocol
-from operator import ne
-
-
 L = [1, 2, 3]
 I = iter(L)
 
@@ -31,7 +29,7 @@ print(I.__next__())
 
 # Iteration on dictionaries
 D = {'a':1, 'b':2, 'c':3}
-for key in D.keys():
+for key in D: # views objects
     print(key, D[key])
 
 # for loop will use the iteration protocol to grab one key each time 
@@ -43,7 +41,7 @@ import os
 P = os.popen('dir')
 print(P.__next__())
 print(P.__next__())
-# Error: object is not an iterator, because we didn't call iter() fucntion
+# Error: object is not an iterator, because we didn't call iter() function
 print(next(P)) 
 
 
@@ -62,7 +60,7 @@ zip(open('script.py'), open('script.py'))
 enumerate(open('script.py'))
 filter(bool, open('script.py'))
 import functools, operator
-import re
+
 functools.reduce(operator.add, open('script.py'))
 
 # Other tools which implement iteration protocol
@@ -79,7 +77,7 @@ L = [11, 22, 33, 44]
 L[1:3] = open('script.py')
 print(L)
 L = [11]
-L.extend(open('script.py')) 
+L.extend(open('script.py'))
 
 set(open('script.py'))
 {line for line in open('script.py')}
@@ -101,9 +99,7 @@ print(A, B)
 R = range(10)
 I = iter(R)
 print(len(R), R[1])
-"""
 
-from operator import ne
 
 
 D = dict(a=1, b=2, c=3)
@@ -115,3 +111,5 @@ print(next(I))
 f = open("script.py")
 i = iter(f)
 print(next(i))
+
+"""
