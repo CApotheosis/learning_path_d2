@@ -4,3 +4,4 @@
 - M.Lutz  Learning Python 4th ed. Chapters 14, 20, 29 (the part with __iter__ and next).
 - PEP-234
 - Beazley, David M. (2009). Python Essential Reference (4th ed.). (Chapter 15 , itertools)
+- 

@@ -114,6 +114,8 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.vevn
+/vevn
 env/
 venv/
 ENV/
@@ -145,3 +147,5 @@ dmypy.json
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/python
+
+/.vscode
