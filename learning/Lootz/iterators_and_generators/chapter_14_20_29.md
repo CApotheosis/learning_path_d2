@@ -46,3 +46,7 @@ for loop works on any iterable object.
 
 ### Generator objects can't be indexed and we can't access length.
 ### (i for i in range(100)) is a generator, not a tuple.
+
+
+# Chapter 20
+
