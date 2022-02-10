@@ -25,13 +25,13 @@ print(NotImplemented)
 print(C.mro())
 
 
-a = 3 # 8
-a = [] # 
-type("")
+if __name__ == "__main__":
+    a = 3 # 8
+    a = [] # 
+    type("")
 
-try:
-    2/0
-except (Exception) as e:
-    print("zero error")
-    raise e
-    
+    try:
+        2/0
+    except (Exception) as e:
+        print("zero error")
+        raise e
