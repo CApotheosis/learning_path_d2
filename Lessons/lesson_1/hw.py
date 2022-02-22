@@ -58,3 +58,18 @@ class A:
 p = A(1)
 print(p.__hash__()) # return an id
 
+class Person:
+    def __init__(self, age, name):
+        self.age = age
+        self.name = name
+
+    def __eq__(self, other):
+        print("other", other)
+        return self.age == other.age and self.name == other.name
+
+    def __hash__(self):
+        print('The hash is:')
+        return hash((self.age, self.name))
+
+person = Person(1, 'Adam')
+print(hash(person.name), hash(person.age), person.__eq__(2))
