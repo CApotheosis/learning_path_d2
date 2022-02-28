@@ -25,7 +25,7 @@ Abstraction is the process of hiding information (abtracting) and giving access 
 # print(type(()))
 
 class Person: # class creation
-    
+
     membership = True # Class object attribute - static
     _secret = "secret code"
     __super_secret = "super_secret"
@@ -36,7 +36,7 @@ class Person: # class creation
 
     def get_class(self):
         print(self)
-    
+
     def shout(self):
         print(f'My name is {self.name}')
 
@@ -55,10 +55,14 @@ class Player:
     """classmethod is likely to self, but instead of self we use cls keyword to reference class
     classmethod can be used without intanciating class and creatin __init__ dunder method
     """
+    arr = []
+
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
+    def __str__(self) -> str:
+        return f"{self.name} {self.age}"
     # @classmethod
     # def add_nums(cls, num_1, num_2):
     #     return num_1 + num_2
@@ -67,15 +71,17 @@ class Player:
     @classmethod
     def get_player_age(cls, num_1, num_2, a):
         cls.a = a
-        return cls("Clark", num_1 + num_2) # Here, we can override basic __init_- method with cls
-    
+        return cls("Clark", num_1 + num_2) # Here, we can override basic __init__ - method with cls
+
     @staticmethod
     def add_nums_2(num_1, num_2):
         return num_1 + num_2
 
 # print(Player.add_nums(1, 4))
-player_1 = Player.get_player_age(2, 3, 23)
-print(player_1.a)
+player = Player("Joe", 43)
+print(player)
+player_1 = Player(2, 3)
+print(player_1)
 
 
 class A:
