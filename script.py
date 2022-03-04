@@ -24,11 +24,29 @@ class B(A):
         print('B process()')
 
 
-class C(A, B):
-    def mro(self):
-        return [C, A, B, object]
+# class C(A, B):
+#     def mro(self):
+#         return [C, A, B, object]
 
-
-obj = C()
-obj.mro()
+# obj = C()
+# obj.mro()
 # obj.process()
+
+a, *_, b = 1,2,3,4,5
+print(a, b, *_)
+
+
+def func(c):
+    print(c)
+
+
+func("dsadasd", **{})
+
+def num(*args):
+    print(args)
+
+num(1, 2, 3, 4)
+
+import pydantic
+print('compiled:', pydantic.compiled)
+

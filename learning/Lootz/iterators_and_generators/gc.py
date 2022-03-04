@@ -1,14 +1,25 @@
 def fib():
     a, b = 0, 1
-    while 1: 
+    for _ in range(10): 
        yield b # stops execution and resumes from here on the next call
        a, b = b, a+b
 
-f = fib()
-# print(next(f))
-# print(next(f))
-# print(next(f))
+    #    yield 5
 
+f = fib()
+for i in range(20):
+    print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
+# print(next(f))
 
 # def f():
 #     1/0
@@ -77,10 +88,10 @@ def infinite_palindromes():
 #         pal_gen.throw(ValueError("We don't like large palindromes"))
 #     pal_gen.send(10 ** (digits))
 
-pal_gen = infinite_palindromes()
-for i in pal_gen:
-    print(i)
-    digits = len(str(i))
-    if digits == 5:
-        pal_gen.close() # raises StopIteration
-    pal_gen.send(10 ** (digits))
+# pal_gen = infinite_palindromes()
+# for i in pal_gen:
+#     print(i)
+#     digits = len(str(i))
+#     if digits == 5:
+#         pal_gen.close() # raises StopIteration
+#     pal_gen.send(10 ** (digits))
