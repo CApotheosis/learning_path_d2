@@ -26,6 +26,7 @@ class FakeDatabase:
     def locked_update(self, name):
         logging.info("Thread %s: starting update", name)
         logging.debug("Thread %s about to lock", name)
+
         # if used with `with` statement there's no need to use .acquire() and .release() 
         with self._lock:
             logging.debug("Thread %s has lock", name)
@@ -34,6 +35,7 @@ class FakeDatabase:
             time.sleep(0.1)
             self.value = local_copy
             logging.debug("Thread %s about to release lock", name)
+
         logging.debug("Thread %s after release", name)
         logging.info("Thread %s: finishing update", name)
 
@@ -46,8 +48,9 @@ if __name__ == "__main__":
     database = FakeDatabase()
     logging.info("Testing update. Starting value is %d.", database.value)
     with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
-        for index in range(2):
-            executor.submit(database.locked_update, index)
+        executor.map(database.locked_update, range(2))
+        # for index in range(2):
+        #     executor.submit(database.locked_update, index)
     logging.info("Testing update. Ending value is %d.", database.value)
 
 """Deadlock.
@@ -58,19 +61,19 @@ In this example, you can fix the deadlock by removing the second call, but deadl
 
 Always use context maanger in order to not forget to call release for each thread activation.
 """
-import threading
+# import threading
 
-# this is a deadlock. To fix uncomment release for each call to acquire()
-l = threading.RLock() # if RLock is used, we can stack acquire() call nut still have  to acll release same time as we call acquire()
-print("before first acquire")
-l.acquire()
-print("before second acquire")
+# # this is a deadlock. To fix uncomment release for each call to acquire()
+# l = threading.RLock() # if RLock is used, we can stack acquire() call nut still have  to acll release same time as we call acquire()
+# print("before first acquire")
+# l.acquire()
+# print("before second acquire")
+# # l.release()
+
+# l.acquire()
+# print("acquired lock twice")
+# l.release()
 # l.release()
 
-l.acquire()
-print("acquired lock twice")
-l.release()
-l.release()
 
-
-print("working")
+# print("working")

@@ -10,3 +10,5 @@
     - --format $FORMAT - formats to print vertically
 
 An image is every file that makes up just enough of the operating system to do what you need to do.
+
+- layer

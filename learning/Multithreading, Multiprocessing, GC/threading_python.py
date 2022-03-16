@@ -13,20 +13,20 @@ def thread_function(name):
     time.sleep(2)
     logging.info("Thread %s: finishing", name)
 
-# if __name__ == "__main__":
-#     format = "%(asctime)s: %(message)s"
-#     logging.basicConfig(format=format, level=logging.INFO,
-#                         datefmt="%H:%M:%S")
+if __name__ == "__main__":
+    format = "%(asctime)s: %(message)s"
+    logging.basicConfig(format=format, level=logging.INFO,
+                        datefmt="%H:%M:%S")
 
-#     logging.info("Main    : before creating thread")
-#     # with daemon flag set to True, the program won't wait for func to execute
-#     x = threading.Thread(target=thread_function, args=(1,), daemon=True)
-#     logging.info("Main    : before running thread")
-#     x.start()
-#     logging.info("Main    : wait for the thread to finish")
-#     # To tell one thread to wait for another thread to finish, you call .join(). 
-#     x.join() # Wait until the thread terminates. Works despite setting deamon to True
-#     logging.info("Main    : all done")
+    # logging.info("Main    : before creating thread")
+    # # with daemon flag set to True, the program won't wait for func to execute
+    # x = threading.Thread(target=thread_function, args=(1,), daemon=True)
+    # logging.info("Main    : before running thread")
+    # x.start()
+    # logging.info("Main    : wait for the thread to finish")
+    # # To tell one thread to wait for another thread to finish, you call .join(). 
+    # x.join() # Wait until the thread terminates. Works despite setting deamon to True
+    # logging.info("Main    : all done")
 
     # multiple threads
     # threads = list()
@@ -42,7 +42,9 @@ def thread_function(name):
     #     logging.info("Main    : thread %d done", index)
 
 import concurrent.futures
+import os
 
+print(os.cpu_count())
 # [rest of code]
 
 if __name__ == "__main__":
@@ -55,5 +57,5 @@ if __name__ == "__main__":
     logging.basicConfig(format=format, level=logging.INFO,
                         datefmt="%H:%M:%S")
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         executor.map(thread_function, range(3))

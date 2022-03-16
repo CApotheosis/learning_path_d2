@@ -50,3 +50,47 @@ num(1, 2, 3, 4)
 import pydantic
 print('compiled:', pydantic.compiled)
 
+
+q = lambda: locals()
+print(q())
+
+def func():
+    qwerty = 1
+    print(locals())
+    print(globals())
+
+# func()
+
+import logging
+import os
+from queue import Queue
+from threading import Thread
+from time import time
+
+# from download import setup_download_dir, get_links, download_link
+
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+logger = logging.getLogger(__name__)
+
+
+class DownloadWorker(Thread):
+
+    def __init__(self, queue):
+        Thread.__init__(self) # we extended Thread class to DownloadWorker
+        self.queue = queue
+
+    def run(self):
+        while True:
+            # Get the work from the queue and expand the tuple
+            directory, link = self.queue.get()
+            try:
+                download_link(directory, link)
+            finally:
+                self.queue.task_done()
+
+queue = Queue()
+download = DownloadWorker(queue)
+print(download, download.queue)
+print(Thread.__init__())
