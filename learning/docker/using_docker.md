@@ -198,5 +198,3 @@ docker push username/image_name_to_push
 ### If a network preference is not specified, on which network will the container be placed, by default? - bridge
 
 
-
-
