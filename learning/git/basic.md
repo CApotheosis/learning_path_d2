@@ -61,3 +61,4 @@ If we apply changes with filesystem, git won't track changes as it is. Id we do 
 - git checkout -- file_to_reset - sets it as a current file version
 
 ## revert commit
+chabges to delete
