@@ -88,4 +88,8 @@ If we apply changes with filesystem, git won't track changes as it is. Id we do 
 - git config --global core.exclidesfile ~/.gitignore_global - ignores files globally
 
 ## Ignore tracked files
-- git rm --cached file_to_ignore
+- git rm --cached file_to_ignore - unstages file from remote repository
+
+
+## Track empty directories
+create .gitkeep file inside an empty directory
