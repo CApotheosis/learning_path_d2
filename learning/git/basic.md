@@ -25,4 +25,5 @@
 ### Untracked files - changes which are not in repository.
 
 ### View difference between commits
-- `git diff` - to see changes different from current commit
+- `git diff` - to see changes different from current commit. difference between local and remote cahnges
+- `git diff --staged` - difference between remote and local cahnges
