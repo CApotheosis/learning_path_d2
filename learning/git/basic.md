@@ -27,6 +27,7 @@
 ### View difference between commits
 - `git diff` - to see changes different from current commit. difference between local and remote cahnges
 - `git diff --staged` - difference between remote and local cahnges
+<<<<<<< HEAD
 - `git diff --color-words` - colors changes only
 - `git diff commit_one_hash..commit_two_hash` - comparing commits. we can use HEAD to point to last commit
 
@@ -62,3 +63,5 @@ If we apply changes with filesystem, git won't track changes as it is. Id we do 
 
 ## revert commit
 chabges to delete
+=======
+>>>>>>> parent of 568667a (Delete first file)
