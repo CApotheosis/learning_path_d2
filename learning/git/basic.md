@@ -1,4 +1,4 @@
-## Commnds:
+## Commands:
 - `ls -la` - shows hidden file
 - `git add .` - adds all changes
 - `git commit -m` "Message to commit with" - commits added changes
@@ -22,4 +22,7 @@
 
 ### HEAD point to tip of curent branch in repository. Location .git/HEAD
 
-### Untracked files - changes which are not in repository 
+### Untracked files - changes which are not in repository.
+
+### View difference between commits
+- `git diff` - to see changes different from current commit
