@@ -19,3 +19,17 @@
 - ### Name references search at most four scopes: local, then enclosing functions (if any), then global, then built-in.
 
 - ### Names declared in global and nonlocal statements map assigned names to enclosing module and function scopes, respectively.
+
+## Scopes
+- `global` makes scope lookup begin in the enclosing module’s scope and allows
+names there to be assigned. Scope lookup continues on to the built-in scope if the
+name does not exist in the module, but assignments to global names always create
+or change them in the module’s scope.
+- `nonlocal` restricts scope lookup to just enclosing defs, requires that the names already
+exist there, and allows them to be assigned. Scope lookup does not continue
+on to the global or built-in scopes.
+
+## Python resolves nonlocals at function creation time, not fucntion call time.
+
+
+

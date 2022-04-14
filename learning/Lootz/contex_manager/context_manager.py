@@ -100,6 +100,7 @@ class HelloContextManager:
             # Handle IndexError here...
             print(f"An exception occurred in your with block: {exc_type}")
             print(f"Exception message: {exc_value}")
+            print(f"Exception traceback: {exc_tb}")
             return True
 
 with HelloContextManager() as hello:

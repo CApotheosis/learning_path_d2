@@ -2,7 +2,7 @@
 
 ### When you write a Python program, the Python interpreter reads your program and carries out the instructions it contains. In effect, the interpreter is a layer of software logic between your code and the computer hardware on your machine.
 
-### After writing python code and sending it into execution two steps are carries out:
+### After writing python code and sending it into execution two steps are carried out:
 - ### compilation into byte code
 - ### routing into virtual machine 
 

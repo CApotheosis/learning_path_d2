@@ -12,12 +12,14 @@ Options for Dockerfile
 - ENV: sets env vars; both during the build and when running the result
 - VOLUME: creates aa mount point as defined when the container is run
 - ENTRYPOINT: the executable runs when a container is run
-- **Expose**: documents the ports that should be published
+- Expose: documents the ports that should be published
 - CMD: provides arguments for the entrypoint (only one is allowed)
 - ONBUILD
 - RUN: runs a new command in a new layer
 - WORKDIR: defines the working directory of the container 
 
+ENTRYPOINT is constant
+CMD we can change parameters
 ```Dockerfile
 FROM ubuntu
 LABEL
