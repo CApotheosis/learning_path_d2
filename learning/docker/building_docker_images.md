@@ -1,7 +1,7 @@
 ## Dockerfile
 - is a small program to create and image
 - to run file: `docker built -t name_of_result . `
-    - -t - tag accesting a name for the image which is `name_of_result`
+    - -t - tag accesing a name for the image which is `name_of_result`
     - . - stands for directory where to find dockerfile to execute. we can set directory, if it's not in current directory
 
 Options for Dockerfile

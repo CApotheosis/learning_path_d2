@@ -9,7 +9,7 @@ def func_name(x, y, z):
 
 # LEGB - Local, Enclosed, Global, Built-in
 y, z = 1, 2
-
+# http://com-copyright-wtf-archive-nonprod.s3.amazonaws.com/DO_NOT_DELETE_TEST/batches/ASCO_ST/3_JCO.18.00131.xml
 def all_global():
     global x
     x = y + z

@@ -13,6 +13,7 @@ or the restricting of direct access to some of an object's components.
 Encapsulation is the process of packing data and function into a bundle of attributes and methods to use for ourselves.
 
 Abstraction is the process of hiding information (abtracting) and giving access to only what's necessary.
+Абстракция - это использование минимально необходимого 
 """
 # Everything in pyton is an object
 # print(type(None)) 

@@ -21,20 +21,22 @@
 - ### Dockerfile: Configuration file used to automate the image creation process to a Docker container
 
 ### To create new container from one container with its changes:
-- docker commit container_id_to_copy_from: returns sha256 value
-- docker tag sha256 new_image_name
+- `docker commit container_id_to_copy_from: returns sha256 value`
+- `docker tag sha256 new_image_name`
 ### Another way of doing it:
-- docker commit image_name new_image_name_to_copy
+- `docker commit image_name new_image_name_to_copy`
 
-`docker run`
+### `docker run`
 - containers have a main process
-- the containers stops when hat process stops
+- the containers stops when main process stops
 - containers have names
 
-`docker run`:
+### `docker run`:
 - --rm -ti ubuntu sleep 5: --rm - deletes container after use
 - -ti ubuntu bash -c "sleep 3, echo all done": bash proces to do sequence of things
 - -d -ti ubuntu bash: -d (detach) - runs on background
+<br></br>
+
 ### Access to container running in background: 
 - `docker attach name_of_the_container`: runs container by name;
 ### Key sequence to detach and keep running container:
@@ -49,12 +51,12 @@
 ### Commands:
 - -ti name_of_the_container bash
 
-docker logs:
+## `docker logs`:
 - Keep the output of the containers
 - view log of a container: docker logs container_name
 - don't let the output get too large
 
-docker run --name example -d ubuntu bash -c "lose /etc/password" # there is a typo 
+`docker run --name example -d ubuntu bash -c "lose /etc/password" # there is a typo` 
 
 ## Stopping and removing containers
 - docker kill container_name: kills the process
