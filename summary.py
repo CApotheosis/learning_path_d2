@@ -178,7 +178,7 @@ def greet(message=y):
 messages = [y]
 greet(*messages)
 print(sys.getrefcount(y))
-
+"""
 # Garbage Collector.
 import gc
 getitem()
@@ -203,7 +203,10 @@ gc.garbage
 gc.get_count()
 gc.collect(0) # generation to collect
 gc.get_threshold()
-
+"""
 
 # trunck based - 
 
+import os 
+
+print(os.path.join(os.path.dirname(__file__), 'logs'))
