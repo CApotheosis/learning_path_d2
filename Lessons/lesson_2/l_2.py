@@ -59,7 +59,7 @@ def function_ex(a, b=None):
 
 
 res = function_ex(1)  # 23124231
-print(res)
+print("res", res)
 res = function_ex(2)
 print(res)
 
@@ -89,16 +89,17 @@ def decorator_factory(*args, **kwargs):
     return func
 
 
-# @decorator_factory(a=2, b=3)
+@decorator_factory(a=2, b=3)
 def hello(h):
     """Print whatewer you pass."""
     print(h)
 
 
-# hello("dsadas")
-a = decorator_factory(1, 2, 4)(hello)
-a("Hello world")
-print(a.__name__)
+hello("dsadas")
+# a = decorator_factory(1, 2, 4)(hello)
+# a("Hello world")
+# print(a.__name__, a.__doc__)
+print(hello.__name__, hello.__doc__)
 
 
 
@@ -152,7 +153,7 @@ class Accesss:
     a = 2
 
     def __init__(self, name, psw):
-        # self.name = name
+        self.name = name
         self.psw = psw
 
     @staticmethod
@@ -167,9 +168,10 @@ class Accesss:
     def __str__(self) -> str:
         return f"{self.name}, {self.psw}"
 
-a = Accesss('2', "fds")
-a_1 = Accesss('2', "fds")
+a = Accesss('2', "Adam")
+a_1 = Accesss('2', "Joe")
 Accesss.get_value()
+print(Accesss.func("Rose"))
 a.func("new name")
 print(a)
 
@@ -204,8 +206,8 @@ print(Player.add_nums(1, 4))
 player = Player("Joe", 43)
 print(player)
 player_1 = Player(20, 30)
-player_1.get_player_age(1, 2, "aaaa")
-print(player_1)
+print(player_1.get_player_age(1, 2, "aaaa"))
+print("player_1", player_1, player_1.name, player_1.age, player_1.a)
 
 
 # try:
@@ -289,6 +291,7 @@ class CustomException(BaseException):
 # Sprint Review
 # Sprint Retrospective
 # Product Backlog Refinement
+# Backlog grooming
 
 # agile artifacts
 
@@ -309,3 +312,33 @@ Then q(y) should be provable for objects y of type S where S is a subtype of T.
 I - Interface Segregation Principle
 D - Dependency Inversion Principle
 """
+from functools import wraps
+def arg_dec(a):
+    print(a)
+    def dec(func):
+        @wraps(func)
+        def a():
+            """Docs 3"""
+            print("do smth")
+            func()
+            print("end smth")
+        return a
+    return dec
+
+@arg_dec(2)
+def hello():
+    """My doc"""
+    print("hello")
+
+hello()
+print(hello.__doc__)
+
+class P:
+    def a(self):
+        print("yes")
+
+    def a(self):
+        print("no")
+
+a = P()
+a.a()

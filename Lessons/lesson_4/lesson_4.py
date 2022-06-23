@@ -14,8 +14,8 @@ class G(A):
         return 2
 
 class C(B, G):
-    def mro():
-        return [C]
+    # def mro():
+    #     return [C]
 
     def b(self):
         b = B()

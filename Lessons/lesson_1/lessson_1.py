@@ -2,7 +2,7 @@
   mutable: list, dict, set
   immutable: all else
 
-  difference between is and if
+  difference between is and id
   what is id()
   id() - is a reference to and an object ID in memory: https://www.geeksforgeeks.org/difference-operator-python/
   reference count
@@ -25,20 +25,20 @@ print(a is b, id(a), id(b))
 print(None == None) # singletone
 print(1 + True) # base class int and that's why we can accomplish simple operations on them
 
-a and b # False 
+print("state", a and b) # False 
 
 a = 1
 b = 2.4
 c = 1j
 print(dir(2))
 
-b.__radd__(2) # 2 + (-1) почитать
+print("radd", b.__radd__(2)) # 2 + (-1) почитать
 s = "dsadasdsa dsadas"
 s.strip()
 print(s.islower())
 
-print(chr(1))
-print(ord("0"))
+print("chr", chr(1))
+print(ord("A"))
 print("dsad".join("dsadsa"))
 "{0} {1}".format(2, 3)
 print(f"{23+23:d}")

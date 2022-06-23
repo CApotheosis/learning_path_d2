@@ -21,7 +21,7 @@ X = 99 # Global scope name: not used
 def f1():
     X = 88 # Enclosing def local
     def f2():
-        print(X) # Reference made in nested def
+        print("x =", X) # Reference made in nested def
     f2()
 
 f1() #
@@ -35,7 +35,7 @@ def maker(N):
     # return lambda X: X ** N
 
 f = maker(2)
-print(f(3))
+print("f =", f(3))
 
 # In python 2.x there wasn't look to search in enclosed scope, thus defaults assigment x=x was used to retain value.
 def f1():
@@ -49,12 +49,12 @@ f1() # Prints 88
 def makeActions():
     acts = []
     for i in range(5):
-        acts.append(lambda x: i ** x) # But all remember same last i!
-        # acts.append(lambda x, i=i: i ** x) # Remember current i
+        # acts.append(lambda x: i ** x) # But all remember same last i!
+        acts.append(lambda x, i=i: i ** x) # Remember current i
     return acts
 
 acts = makeActions()
-print(acts[0](2)) # print the same 
+print("a =", acts[0](2)) # print the same 
 print(acts[1](2)) # print the same
 print(acts[2](2)) # print the same
 
@@ -65,7 +65,7 @@ def tester(start):
     def nested(label):
         nonlocal state
         print(label, state)
-        state += 1 # now we have wite access to state
+        state += 1 # now we have access to state
     return nested
 
 f = tester(0)
@@ -107,7 +107,7 @@ class tester:
 
 h = tester(99)
 h("juice")
-
+print(h)
 
 # Function attributes
 def tester(start):
@@ -120,7 +120,7 @@ def tester(start):
 
 f = tester(2)
 f("spam")
-print(f.state)
+print(f.state, "\nseparate\n")
 
 
 
@@ -177,7 +177,7 @@ def greet(message=y):
 
 messages = [y]
 greet(*messages)
-print(sys.getrefcount(y))
+print("refcpunt =", sys.getrefcount(y))
 """
 # Garbage Collector.
 import gc

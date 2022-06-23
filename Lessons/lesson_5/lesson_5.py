@@ -4,7 +4,7 @@ import math
 import math
 import sys
 
-print(sys.modules)
+# print(sys.modules)
 
 try:
     file = open("hello.txt", mode="w")
@@ -14,8 +14,8 @@ except Exception as err:
 finally:
     file.close()
 
-with file:
-    file.write("Hello, World!")
+# with file:
+#     file.write("Hello, World!")
 
 # Usage of with statement
 import pathlib
@@ -55,12 +55,3 @@ class A:
 
     def __exit__(self, exc_type, exc_value, traceback):
         print("Leaving the context...")
-
-from math import ceil
-# finders and loaders
-
-
-# another file
-from file import ceil
-
-

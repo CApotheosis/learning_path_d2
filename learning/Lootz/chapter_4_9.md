@@ -1,3 +1,21 @@
+# Python Data Types
+## Python Numbers
+Integers, floating point numbers and complex numbers fall under Python numbers category. 
+Integers can be of any length, it is only limited by the memory available.
+A floating-point number is accurate up to 15 decimal places. 
+
+## Immutable:
+- numbers
+- string
+- tuple
+- frozenset
+- 
+## Mutable:
+- list
+- set
+- dict
+
+
 "company_names": [
   "admitad",
   "itechart",

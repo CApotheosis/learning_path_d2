@@ -5,7 +5,7 @@ def func():
     def func_2():
         # enclosed
         a = 32
-    
+
     func_2()
     return a
 
@@ -42,9 +42,12 @@ def accumulate():
             return tally
         tally += next
 
+gen = accumulate()
+print( "next", next(gen), tuple(accumulate()) )
+
 for i in [1]:
     print(i)
 else:
     print("works")
 
-print(dir()) # return the names in the current scope.
+# print(dir()) # return the names in the current scope.

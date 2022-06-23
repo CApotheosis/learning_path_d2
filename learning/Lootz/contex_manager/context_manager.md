@@ -54,7 +54,7 @@ with A() as a, B() as b:
 ```
 
 ## Coding Class-Based Context Managers
-- ### `.__enter__(self)`	This method handles the setup logic and is called when entering a new with context. Its return value is bound to the with target variable.
+- ### `.__enter__(self)` This method handles the setup logic and is called when entering a new with context. Its return value is bound to the with target variable.
 
 - ### `.__exit__(self, exc_type, exc_value, exc_tb)` This method handles the teardown logic and is called when the flow of execution leaves the with context. If an exception occurs, then exc_type, exc_value, and exc_tb hold the exception type, value, and traceback information, respectively.
 

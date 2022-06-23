@@ -20,10 +20,10 @@ print(math.floor(1 / 2)) # ceil is upper floor is down
 # and for x in set. Being an unordered collection, sets 
 # do not record element position or order of insertion. 
 # Accordingly, sets do not support indexing, slicing, or other sequence-like behavior.
-print(dir(set))
+# print(dir(set))
 # Frozenset.
 # Return a new set or frozenset object whose elements are taken from iterable.
-print(dir(frozenset))
+# print(dir(frozenset))
 
 """Hashable.
 
@@ -72,4 +72,4 @@ class Person:
         return hash((self.age, self.name))
 
 person = Person(1, 'Adam')
-print(hash(person.name), hash(person.age), person.__eq__(2))
+print("hash", hash(person.name), hash(person.age), person.__eq__(Person(1, 'Adam')))
