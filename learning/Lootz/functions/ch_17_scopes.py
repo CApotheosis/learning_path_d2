@@ -1,4 +1,4 @@
-w"""
+"""
 X = 99 # Global (module) scope X
 
 def func():
