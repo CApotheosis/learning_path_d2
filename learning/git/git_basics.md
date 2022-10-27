@@ -51,15 +51,7 @@ Git doesn't work that way. Git really focuses on these change sets and encapsula
 
 Tell about forking and working with between different repositories.
 ```
-`git help` and it's usage.
-
-
-
-
-
-
-In previous versions of version control system
-
+Tell about `git help` and it's usage.
 
 ## 1. Getting started
 Git levels:

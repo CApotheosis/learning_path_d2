@@ -29,7 +29,8 @@ class Person: # class creation
 
     membership = True # Class object attribute - static
     _secret = "secret code"
-    __super_secret = "super_secret"
+    
+    
 
     def __init__(self, name): # self is a reference to Person class
         if Person.membership:

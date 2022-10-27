@@ -27,7 +27,7 @@ docker run -ti --rm --name hello ubuntu bash
 docker inspect --format '{{.State.Pid}}' hello
 # return PID of the hello container
 
-# create container with privieges
+# create container with priviliges
 docker run -ti --rm --priviliged=true --pid=host ubuntu bash
 kill PID
 ```
