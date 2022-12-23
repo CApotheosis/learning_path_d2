@@ -55,7 +55,7 @@ for loop works on any iterable object.
 # Generators
 ### In programming language theory, lazy evaluation, or call-by-need,[1] is an evaluation strategy which delays the evaluation of an expression until its value is needed (non-strict evaluation) and which also avoids repeated evaluations (sharing).
 ### Generator-function is a function that keeps the state of execution in memory after executing `yield`. `yield` can be used only in functions to hold the state info for returning variable and in the next call with `next` it be executed as normal function with changed state. 
-```
+```py
 def fib():
     a, b = 0, 1
     while 1:
@@ -66,7 +66,7 @@ def fib():
 
 ### Due to generators workflow, memory usage used per next call and we don't have to load whole object and iterate over it, we can access state per call thus be efficient and faster.
 ### It's not recommneded to use generator in try/except call because we might not reach the call due to exceptions. If a generator expression raises an exception on any call, next call will raise StopIteration, because exception will terminate a generator's life.
-```
+```py
 def f():
     1/0
     yield 43
